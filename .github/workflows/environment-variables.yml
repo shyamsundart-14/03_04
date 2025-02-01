@@ -13,14 +13,14 @@ jobs:
           STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable for bash'
         run: |
           echo "Accessing environment variables in run command"
-          echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
-          echo "$JOB_ENVIRONMENT_VARIABLE"
-          echo "$STEP_ENVIRONMENT_VARIABLE"
+          echo "1.$WORKSPACE_ENVIRONMENT_VARIABLE"
+          echo "2.$JOB_ENVIRONMENT_VARIABLE"
+          echo "3.$STEP_ENVIRONMENT_VARIABLE"
           echo "------------------------------------------------------"
           echo "Accessing environment variables using env context"
-          echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
+          echo "4.${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
+          echo "5.${{ env.JOB_ENVIRONMENT_VARIABLE }}"
+          echo "6.${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
   windows:
     env:
       JOB_ENVIRONMENT_VARIABLE: 'custom job environment variable for windows'
@@ -31,11 +31,11 @@ jobs:
           STEP_ENVIRONMENT_VARIABLE: 'custom step environment variable for powershell'
         run: |
           echo "Accessing environment variables in run command"
-          echo "$Env:WORKSPACE_ENVIRONMENT_VARIABLE"
-          echo "$Env:JOB_ENVIRONMENT_VARIABLE"
-          echo "$Env:STEP_ENVIRONMENT_VARIABLE"
+          echo "1.$Env:WORKSPACE_ENVIRONMENT_VARIABLE"
+          echo "2.$Env:JOB_ENVIRONMENT_VARIABLE"
+          echo "3.$Env:STEP_ENVIRONMENT_VARIABLE"
           echo "------------------------------------------------------"
           echo "Accessing environment variables using env context"
-          echo "${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.JOB_ENVIRONMENT_VARIABLE }}"
-          echo "${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
+          echo "4.${{ env.WORKSPACE_ENVIRONMENT_VARIABLE }}"
+          echo "5.${{ env.JOB_ENVIRONMENT_VARIABLE }}"
+          echo "6.${{ env.STEP_ENVIRONMENT_VARIABLE }} Not defined"
